@@ -15,6 +15,10 @@ def connectMatlab(sessionID):
     if engine: quitMatlab()
     engine = matlab.engine.connect_matlab(sessionID)
 
+def findMatlab():
+    runningEnginesList = list(matlab.engine.find_matlab())
+    vim.command("return %s"%runningEnginesList)
+
 def quitMatlab():
     global engine
     if type(engine)== matlab.engine.matlabengine.MatlabEngine:

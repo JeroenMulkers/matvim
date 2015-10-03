@@ -24,6 +24,10 @@ function! MatlabConnect(sessionID)
 python matvim.connectMatlab(vim.eval('a:sessionID'))
 endfunction
 
+function! MatlabFind(...)
+python matvim.findMatlab()
+endfunction
+
 function! MatlabRunLine()
 python matvim.runLine()
 endfunction
@@ -42,8 +46,10 @@ endfunction
 
 " shortcuts and commands
 
-command! -nargs=0 MatlabStart   :call MatlabStart()
-command! -nargs=? MatlabConnect :call MatlabConnect(<args>)
+command! MatlabStart :call MatlabStart()
+command! MatlabFind :echo MatlabFind()
+command! -nargs=? -complete=customlist,MatlabFind 
+            \MatlabConnect :call MatlabConnect(<f-args>)
 
 nmap <buffer>,l :call MatlabRunLine() <cr>
 nmap <buffer>,r :call MatlabRunFile() <cr>
