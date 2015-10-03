@@ -40,7 +40,10 @@ function! MatlabRunSection()
 python matvim.runSection()
 endfunction
 
-" shortkeys
+" shortcuts and commands
+
+command! -nargs=0 MatlabStart   :call MatlabStart()
+command! -nargs=? MatlabConnect :call MatlabConnect(<args>)
 
 nmap <buffer>,l :call MatlabRunLine() <cr>
 nmap <buffer>,r :call MatlabRunFile() <cr>
