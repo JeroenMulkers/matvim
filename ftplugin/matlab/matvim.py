@@ -66,3 +66,8 @@ def runSection():
             break
     lines = vim.current.buffer[rowfirst-1:rowlast]
     execute(lines)
+
+def showVariable():
+    varName = vim.eval('expand("<cword>")')
+    lines = ["disp(%s)"%varName]
+    execute(lines)

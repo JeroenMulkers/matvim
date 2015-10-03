@@ -44,6 +44,10 @@ function! MatlabRunSection()
 python matvim.runSection()
 endfunction
 
+function! MatlabShowVariable()
+python matvim.showVariable()
+endfunction
+
 " shortcuts and commands
 
 command! MatlabStart :call MatlabStart()
@@ -55,3 +59,4 @@ nmap <buffer>,l :call MatlabRunLine() <cr>
 nmap <buffer>,r :call MatlabRunFile() <cr>
 vmap <buffer>,s :call MatlabRunSelection() <cr>
 nmap <buffer>,s :call MatlabRunSection() <cr>
+nmap <buffer>,v :call MatlabShowVariable() <cr>
