@@ -9,6 +9,11 @@ python import sys
 python sys.path.append(vim.eval('expand("<sfile>:h")'))
 python import matvim
 
+" bold cell titles
+
+highlight MATCELL cterm=bold term=bold gui=bold
+match MATCELL /^%%[^%]*$/
+
 " python wrappers
 
 function! MatlabStart()
