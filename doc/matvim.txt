@@ -1,0 +1,111 @@
+*matvim.txt* A plugin for a slick Matlab workflow
+
+===============================================================================
+CONTENTS                                                               *matvim*
+
+    1. Intro ................................................... |matvim-intro|
+    2. Requirements ..................................... |matvim-requirements|
+    3. Usage ................................................... |matvim-usage|
+        3.1 Matlab connection ............................. |matvim-connection|
+        3.2 Matlab Executions ............................. |matvim-executions|
+    4. Licence ............................................... |matvim-licence|
+
+===============================================================================
+
+1. Intro                                                         *matvim-intro*
+
+===============================================================================
+
+2. Requirements                                           *matvim-requirements*
+
+- Vim must be compiled with the Python interface
+
+- Matlab Engine for Python
+
+    This python module comes with your Matlab distribution but is not
+    installed by default. You can install the module as follows:
+
+    $ cd "matlabroot/extern/engines/python"
+    $ python setup.py install
+
+    where "matlabroot" is the path to the MATLAB folder. More information about
+    this module can be found on
+
+    html://www.mathworks.com/help/matlab/matlab-engine-for-python.html
+
+===============================================================================
+
+3. Usage                                                         *matvim-usage*
+
+-------------------------------------------------------------------------------
+3.1 Matlab connection                                       *matvim-connection*
+
+Matvim needs a running Matlab engine in order to be functional. Use the
+following commands to setup a connection to a MATLAB session.
+                                                                   *MatlabFind*
+:MatlabFind
+    gives you a list of the active shared Matlab sessions on your computer. If
+    your current Matlab session is not in the list, then the Matlab session is
+    probably not shared. You can make the session shared by using the following
+    function in your MATLAB command window:
+
+      >> matlab.engine.shareEngine('nameOfEngine')
+
+                                                                *MatlabConnect*
+:MatlabConnect {nameOfEngine}
+    lets you connect to an active shared Matlab session. The tab completion
+    cycles through the list of Matlab engines found by :MatlabFind
+
+                                                                  *MatlabStart*
+:MatlabStart
+    starts a new Matlab session in the background.
+
+-------------------------------------------------------------------------------
+3.1 Matlab Executions                                       *matvim-executions*
+
+The following commands can be used to execute Matlab functions and scripts if
+matvim is connected to a Matlab engine. The results appear on the bottom of
+the window.
+                                                                       *Matlab*
+:Matlab {command}
+    executes {command}. E.g.:
+        :Matlab a = sqrt(4.)
+        :Matlab whos
+
+                                                                *MatlabRunFile*
+:MatlabRunFile
+    executes the current file
+    Default shortcut key:  ,r
+
+                                                                *MatlabRunLine*
+:MatlabRunLine
+    executes the line of the current cursor position
+    Default shortcut key:  ,l
+
+                                                             *MatlabRunSection*
+:MatlabRunSection
+    executes the section of the current cursor position
+    Default shortcut key:  ,s
+
+                                                           *MatlabRunSelection*
+:MatlabRunSelection
+    executes the selected lines
+    Default shortcut key:  ,s
+
+                                                           *MatlabShowVariable*
+:MatlabShowVariable
+    returns the value of the variable below the current cursor position
+    Default shortcut key:  ,v
+
+                                                               *matvim-mapping*
+A list of the shortcut keys
+    ,r   :|MatlabRunFile|
+    ,l   :|MatlabRunLine|
+    ,s   :|MatlabRunSection|
+    ,s   :|MatlabRunSelection|
+    ,v   :|MatlabShowVariable|
+
+===============================================================================
+
+4. Licence                                                     *matvim-licence*
+
