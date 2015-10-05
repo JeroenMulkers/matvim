@@ -10,10 +10,20 @@ def startMatlab():
     if engine: quitMatlab()
     engine = matlab.engine.start_matlab()
 
-def connectMatlab(sessionID):
+def connectMatlab(sessionID=None):
     global engine
     if engine: quitMatlab()
-    engine = matlab.engine.connect_matlab(sessionID)
+    runningEngines = list(matlab.engine.find_matlab())
+    if not sessionID:
+        if runningEngines:
+            engine = matlab.engine.connect_matlab(runningEngines[0])
+        else:
+            print "No active Matlab engines found"
+    if sessionID:
+        if sessionID not in runningEngines:
+            print "No matlab engine named %s is active"%sessionID
+        else:
+            engine = matlab.engine.connect_matlab(sessionID)
 
 def findMatlab():
     runningEnginesList = list(matlab.engine.find_matlab())

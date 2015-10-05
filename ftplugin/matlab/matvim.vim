@@ -20,8 +20,12 @@ function! MatlabStart()
 python matvim.startMatlab()
 endfunction
 
-function! MatlabConnect(sessionID)
-python matvim.connectMatlab(vim.eval('a:sessionID'))
+function! MatlabConnect(...)
+    if a:0 == 0
+        python matvim.connectMatlab()
+    elseif a:0 == 1
+        python matvim.connectMatlab(vim.eval('a:1'))
+    endif
 endfunction
 
 function! MatlabFind(...)
