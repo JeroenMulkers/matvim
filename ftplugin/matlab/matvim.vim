@@ -48,8 +48,14 @@ function! MatlabShowVariable()
 python matvim.showVariable()
 endfunction
 
-function! MatlabRunCommand(commandstr)
-python matvim.runCommand(vim.eval('a:commandstr'))
+function! MatlabRunCommand(...)
+    if a:0 == 0
+        let commandstr = input('>> ')
+        echo ' '
+        python matvim.runCommand(vim.eval('commandstr'))
+    elseif a:0 == 1
+        python matvim.runCommand(vim.eval('a:1'))
+    endif
 endfunction
 
 " shortcuts and commands
@@ -59,6 +65,7 @@ command! MatlabStart :call MatlabStart()
 command! MatlabFind :echo MatlabFind()
 command! -nargs=? -complete=customlist,MatlabFind MatlabConnect :call MatlabConnect(<f-args>)
 
+nmap <buffer>,m :call MatlabRunCommand() <cr>
 nmap <buffer>,l :call MatlabRunLine() <cr>
 nmap <buffer>,r :call MatlabRunFile() <cr>
 vmap <buffer>,s :call MatlabRunSelection() <cr>

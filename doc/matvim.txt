@@ -68,9 +68,12 @@ matvim is connected to a Matlab engine. The results appear on the bottom of
 the window.
                                                                        *Matlab*
 :Matlab {command}
-    executes {command}. E.g.:
+    executes {command}. If {command} is not given, a matlab prompt '>>' appears
+    Examples:
         :Matlab a = sqrt(4.)
         :Matlab whos
+        :Matlab
+    Default shortcut key:  ,m
 
                                                                 *MatlabRunFile*
 :MatlabRunFile
@@ -99,6 +102,7 @@ the window.
 
                                                                *matvim-mapping*
 A list of the shortcut keys
+    ,m   :|Matlab|
     ,r   :|MatlabRunFile|
     ,l   :|MatlabRunLine|
     ,s   :|MatlabRunSection|
