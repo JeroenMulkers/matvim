@@ -29,12 +29,16 @@ def execute(lines):
     if type(engine)!=matlab.engine.matlabengine.MatlabEngine:
         print "I do not find a matlab engine"
         return
-    fscript = 'tmpscriptAZWKL.m'
+    oldworkingdir = engine.pwd()
+    workingdir = vim.eval("expand('%:p:h')")
+    fscript = workingdir+'/tmpscriptAZWKL.m'
     with open(fscript,'w') as script:
         for line in lines:
             script.write(line+'\n')
     result = StringIO.StringIO()
+    engine.cd(workingdir,nargout=0)
     engine.tmpscriptAZWKL(nargout=0,stdout=result,stderr=result)
+    engine.cd(oldworkingdir,nargout=0)
     remove(fscript)
     print result.getvalue()
 
