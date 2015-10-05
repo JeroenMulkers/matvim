@@ -71,6 +71,9 @@ def runSection():
     lines = vim.current.buffer[rowfirst-1:rowlast]
     execute(lines)
 
+def runCommand(commandstr):
+    execute([commandstr])
+
 def showVariable():
     varName = vim.eval('expand("<cword>")')
     lines = ["disp(%s)"%varName]

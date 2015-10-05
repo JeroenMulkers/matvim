@@ -40,7 +40,7 @@ function! MatlabRunSelection() range
 python matvim.runSelection()
 endfunction
 
-function! MatlabRunSection() 
+function! MatlabRunSection()
 python matvim.runSection()
 endfunction
 
@@ -48,12 +48,16 @@ function! MatlabShowVariable()
 python matvim.showVariable()
 endfunction
 
+function! MatlabRunCommand(commandstr)
+python matvim.runCommand(vim.eval('a:commandstr'))
+endfunction
+
 " shortcuts and commands
 
+command! -nargs=1 Matlab :call MatlabRunCommand(<f-args>)
 command! MatlabStart :call MatlabStart()
 command! MatlabFind :echo MatlabFind()
-command! -nargs=? -complete=customlist,MatlabFind 
-            \MatlabConnect :call MatlabConnect(<f-args>)
+command! -nargs=? -complete=customlist,MatlabFind MatlabConnect :call MatlabConnect(<f-args>)
 
 nmap <buffer>,l :call MatlabRunLine() <cr>
 nmap <buffer>,r :call MatlabRunFile() <cr>
