@@ -8,7 +8,7 @@ CONTENTS                                                               *matvim*
     3. Usage ................................................... |matvim-usage|
         3.1 Matlab connection ............................. |matvim-connection|
         3.2 Matlab Executions ............................. |matvim-executions|
-    4. Licence ............................................... |matvim-licence|
+    4. Settings ............................................. |matvim-settings|
 
 ===============================================================================
 
@@ -60,6 +60,9 @@ following commands to setup a connection to a MATLAB session.
                                                                   *MatlabStart*
 :MatlabStart
     starts a new Matlab session in the background.
+
+It is possible to automattically connect to or start a Matlab engine. These
+options are discussed in |matvim-settings|.
 
 -------------------------------------------------------------------------------
 3.1 Matlab Executions                                       *matvim-executions*
@@ -114,5 +117,23 @@ A list of the shortcut keys
 
 ===============================================================================
 
-4. Licence                                                     *matvim-licence*
+4. Settings                                                   *matvim-settings*
 
+                                                          *matvim_auto_connect*
+g:matvim_auto_connect
+    matvim will try to connect to an active shared Matlab session when
+    you open an m-script.
+    Default = 0
+    Example for your vimrc:
+        let g:matvim_auto_connect=1
+
+                                                            *matvim_auto_start*
+g:matvim_auto_start
+    matvim will start a new matlab session when you open an m-script.
+    If g:matvim_auto_connect=1, then matvim will first try to connect to an
+    active Matlab session and will only start a new session if this fails.
+    WARNING: Loading an m-script can take a long time if this option is
+             enabled. This is due to the long startup time of Matlab.
+    Default = 0
+    Example for your vimrc:
+        let g:matvim_auto_start=1

@@ -2,6 +2,16 @@ if !has('python')
     finish
 endif
 
+" default settings
+
+if !exists('g:matvim_auto_connect')
+    let g:matvim_auto_connect = 0
+endif
+
+if !exists('g:matvim_auto_start')
+    let g:matvim_auto_start = 0
+endif
+
 " load python module
 
 python import vim
@@ -62,9 +72,19 @@ function! MatlabRunCommand(...)
     endif
 endfunction
 
-" connect to a running shared matlab session (if present)
+" Initialize engine
 
-call MatlabConnect()
+if g:matvim_auto_connect && !g:matvim_auto_start
+    python matvim.connectMatlab()
+endif
+
+if g:matvim_auto_start && !g:matvim_auto_connect
+    python matvim.startMatlab()
+endif
+
+if g:matvim_auto_connect && g:matvim_auto_start
+    python matvim.connectOrStartMatlab()
+endif
 
 " shortcuts and commands
 

@@ -25,6 +25,13 @@ def connectMatlab(sessionID=None):
         else:
             engine = matlab.engine.connect_matlab(sessionID)
 
+def connectOrStartMatlab():
+    runningEngines = list(matlab.engine.find_matlab())
+    if runningEngines:
+        engine = matlab.engine.connect_matlab(runningEngines[0])
+    else:
+        engine = matlab.engine.start_matlab()
+
 def findMatlab():
     runningEnginesList = list(matlab.engine.find_matlab())
     vim.command("return %s"%runningEnginesList)
