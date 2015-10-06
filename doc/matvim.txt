@@ -64,8 +64,10 @@ following commands to setup a connection to a MATLAB session.
 3.1 Matlab Executions                                       *matvim-executions*
 
 The following commands can be used to execute Matlab functions and scripts if
-matvim is connected to a Matlab engine. The results appear on the bottom of
-the window.
+matvim is connected to a Matlab engine. The results appear in the
+|more-prompt|. You can scroll through the output with <Space> or <Enter>. If
+the output is really long, you can skip to the end by pressing G.
+
                                                                        *Matlab*
 :Matlab {command}
     executes {command}. If {command} is not given, a matlab prompt '>>' appears
