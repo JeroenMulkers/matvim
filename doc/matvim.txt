@@ -42,6 +42,7 @@ CONTENTS                                                               *matvim*
 
 Matvim needs a running Matlab engine in order to be functional. Use the
 following commands to setup a connection to a MATLAB session.
+
                                                                    *MatlabFind*
 :MatlabFind
     gives you a list of the active shared Matlab sessions on your computer. If

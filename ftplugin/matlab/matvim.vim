@@ -62,6 +62,10 @@ function! MatlabRunCommand(...)
     endif
 endfunction
 
+" connect to a running shared matlab session (if present)
+
+call MatlabConnect()
+
 " shortcuts and commands
 
 command! -nargs=1 Matlab :call MatlabRunCommand(<f-args>)
