@@ -1,4 +1,26 @@
-*matvim.txt* A plugin for a slick Matlab workflow
+*matvim.txt* MATLAB at your fingertips
+   
+   
+     __  __       _         _ __  __                   `ods-           
+    |  \/  |     | |       (_)  \/  |                -ymo:s+          
+    | \  / | __ _| |___   ___| \  / |                /ymd:./y+         
+    | |\/| |/ _` | __\ \ / / | |\/| |              `oymmy:.:sy/        
+    | |  | | (_| | |_ \ V /| | |  | |             :yymmds:.-+yy.       
+    |_|  |_|\__,_|\__| \_/ |_|_|  |_|          ./shymmdhs:--+sys`      
+                                           `:oyhhdhmNmdho/-:/oyy+      
+    MATLAB at your fingertips             /yhddmmdmNmdhyo/::/+syy-     
+                                       `-hmmNNNNdmNmddhyo/::/+syys`    
+                                   `.-/+oooydNNNdmNmddhyso////+osyy+    
+                                -:/++++ooooosyddNNmmddhys++///++syyy:   
+                                ++++++oooooossdNNmdddhyso++////+osyyy.  
+                                ./++ooooooosymNmmdddhyyso++////+ossyys  
+                                  `-/oooosydNmmmddhhyysoo++////::/oyyy+ 
+                                     `-...ommddddhhyssoo++//-`     `/sy:
+                                           `ydhhyyssoo++++:`          :s
+                                            `osoo+++++++/`              
+                                              :::://///-                
+                                              `----::.                  
+
 
 ===============================================================================
 CONTENTS                                                               *matvim*
