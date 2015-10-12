@@ -36,6 +36,22 @@ CONTENTS                                                               *matvim*
 
 1. Intro                                                         *matvim-intro*
 
+Matvim is a Vim plugin which extends vim with some Matlab specific 
+functionalities:
+  - Executing a script, section, selection or a line can be done within a few 
+    keystrokes. 
+  - The vim command line can transform into a Matlab prompt.
+
+Who will have a great time with Matvim?
+  - The scientist who uses Matlab and prefers to work text-based in Vim instead
+    of using Matlab's IDE.
+  - People who are forced to use MATLAB through a terminal.
+    (e.g. if matlab is installed on a server)
+
+Who will not have a great time with Matvim?
+  - Matlab newbies.
+  - People who love clicking around in Matlab's IDE.
+
 ===============================================================================
 
 2. Requirements                                           *matvim-requirements*
