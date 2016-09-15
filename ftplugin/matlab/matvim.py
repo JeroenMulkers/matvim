@@ -54,7 +54,10 @@ def execute(lines):
             script.write(line+'\n')
     result = StringIO.StringIO()
     engine.cd(workingdir,nargout=0)
-    engine.tmpscriptAZWKL(nargout=0,stdout=result,stderr=result)
+    try:
+        engine.tmpscriptAZWKL(nargout=0,stdout=result,stderr=result)
+    except matlab.engine.MatlabExecutionError:
+        pass
     engine.cd(oldworkingdir,nargout=0)
     remove(fscript)
     print result.getvalue()
