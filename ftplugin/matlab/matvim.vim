@@ -12,6 +12,10 @@ if !exists('g:matvim_auto_start')
     let g:matvim_auto_start = 0
 endif
 
+if !exists('g:matvim_max_outputchars')
+    let g:matvim_max_outputchars = -1
+endif
+
 " load python module
 
 python import vim

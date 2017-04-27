@@ -1,25 +1,25 @@
 *matvim.txt* MATLAB at your fingertips
-   
-   
-     __  __       _         _ __  __                    ods-           
-    [  \/  ]     [ ]       (_)  \/  ]                 -ymo:s+          
-    [ \  / ] __ _[ ]___   ___[ \  / ]                /ymd:./y+         
-    [ ]\/[ ]/ _` [ __\ \ / / [ ]\/[ ]              .oymmy:.:sy/        
-    [ ]  [ [ (_] [ ]_ \ V /[ [ ]  [ ]             :yymmds:.-+yy.       
-    [_]  [_]\__,_]\__] \_/ [_[_]  [_]          ./shymmdhs:--+sys.       
-                                           .:oyhhdhmNmdho/-:/oyy+      
-    MATLAB at your fingertips             /yhddmmdmNmdhyo/::/+syy-     
-                                       .-hmmNNNNdmNmddhyo/::/+syys.     
-                                   .-/+oooydNNNdmNmddhyso////+osyy+    
-                                -:/++++ooooosyddNNmmddhys++///++syyy:   
-                                ++++++oooooossdNNmdddhyso++////+osyyy.  
-                                ./++ooooooosymNmmdddhyyso++////+ossyys  
-                                  ^-/oooosydNmmmddhhyysoo++////::/oyyy+ 
+
+
+     __  __       _         _ __  __                    ods-
+    [  \/  ]     [ ]       (_)  \/  ]                 -ymo:s+
+    [ \  / ] __ _[ ]___   ___[ \  / ]                /ymd:./y+
+    [ ]\/[ ]/ _` [ __\ \ / / [ ]\/[ ]              .oymmy:.:sy/
+    [ ]  [ [ (_] [ ]_ \ V /[ [ ]  [ ]             :yymmds:.-+yy.
+    [_]  [_]\__,_]\__] \_/ [_[_]  [_]          ./shymmdhs:--+sys.
+                                           .:oyhhdhmNmdho/-:/oyy+
+    MATLAB at your fingertips             /yhddmmdmNmdhyo/::/+syy-
+                                       .-hmmNNNNdmNmddhyo/::/+syys.
+                                   .-/+oooydNNNdmNmddhyso////+osyy+
+                                -:/++++ooooosyddNNmmddhys++///++syyy:
+                                ++++++oooooossdNNmdddhyso++////+osyyy.
+                                ./++ooooooosymNmmdddhyyso++////+ossyys
+                                  ^-/oooosydNmmmddhhyysoo++////::/oyyy+
                                       -...ommddddhhyssoo++//-       /sy:
                                             ydhhyyssoo++++:           :s
-                                             osoo+++++++/               
-                                              :::://///-                
-                                               ----::.                  
+                                             osoo+++++++/
+                                              :::://///-
+                                               ----::.
 
 
 ===============================================================================
@@ -36,10 +36,10 @@ CONTENTS                                                               *matvim*
 
 1. Intro                                                         *matvim-intro*
 
-Matvim is a Vim plugin which extends vim with some Matlab specific 
+Matvim is a Vim plugin which extends vim with some Matlab specific
 functionalities:
-  - Executing a script, section, selection or a line can be done within a few 
-    keystrokes. 
+  - Executing a script, section, selection or a line can be done within a few
+    keystrokes.
   - The vim command line can transform into a Matlab prompt.
 
 Who will have a great time with Matvim?
@@ -175,3 +175,11 @@ g:matvim_auto_start
     Default = 0
     Example for your vimrc:
         let g:matvim_auto_start=1
+
+                                                       *matvim_max_outputchars*
+g:matvim_max_outputchars
+    The maximum number of characters in the output message. Choosing a value
+    smaller than 1 avoids an upper limit on the maximum number of characters.
+    Default = -1
+    Example for your vimrc:
+        let g:matvim_auto_start=10000

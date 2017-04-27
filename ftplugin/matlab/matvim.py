@@ -60,7 +60,12 @@ def execute(lines):
         pass
     engine.cd(oldworkingdir,nargout=0)
     remove(fscript)
-    print result.getvalue()
+    message = result.getvalue()
+    maxOutputChars = int(vim.eval("g:matvim_max_outputchars"))
+    if maxOutputChars > 0 and len(message) > maxOutputChars:
+        message = message[0:maxOutputChars-1]+ \
+            " ...\nWarning: Message is longer than g:matvim_max_outputchars"
+    print(message)
 
 def runLine():
     row,_ = vim.current.window.cursor
